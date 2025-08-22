@@ -1,6 +1,6 @@
 let secret = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
-let maxAttempts = 10;
+let maxAttempts = 10;  // default medium
 let history = [];
 let lang = "en";
 
@@ -15,7 +15,7 @@ const texts = {
     correct: num => `✅ Correct! The number was ${num}. You guessed it in ${attempts} attempts.`,
     invalid: "⚠️ Please enter a number between 1 and 100.",
     attemptsLeft: left => `Attempts left: ${left}`,
-    history: nums => `Your guesses: ${nums.join(", ")}`
+    history: nums => nums.length ? `Your guesses: ${nums.join(", ")}` : ""
   },
   vi: {
     title: "🎯 Trò chơi đoán số",
@@ -27,7 +27,7 @@ const texts = {
     correct: num => `✅ Chính xác! Số đúng là ${num}. Bạn đoán trong ${attempts} lần.`,
     invalid: "⚠️ Vui lòng nhập số từ 1 đến 100.",
     attemptsLeft: left => `Số lần còn lại: ${left}`,
-    history: nums => `Các số bạn đã đoán: ${nums.join(", ")}`
+    history: nums => nums.length ? `Các số bạn đã đoán: ${nums.join(", ")}` : ""
   }
 };
 
@@ -87,6 +87,14 @@ function resetGame() {
 function changeLanguage() {
   lang = document.getElementById("lang").value;
   updateTexts();
+}
+
+function setDifficulty() {
+  const level = document.getElementById("difficulty").value;
+  if (level === "easy") maxAttempts = 15;
+  if (level === "medium") maxAttempts = 10;
+  if (level === "hard") maxAttempts = 5;
+  resetGame();
 }
 
 updateTexts();
