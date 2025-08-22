@@ -18,6 +18,8 @@ You have to guess the secret number between 1 and 100 within a limited number of
 ---
 
 ## 📷 Demo
+![img](<img width="1223" height="677" alt="ảnh" src="https://github.com/user-attachments/assets/d5408a61-d212-4a72-9b01-4c9e739c1998" />)
+
 👉 [Play the game here](https://danhtienfuh.github.io/Number-Guessing-Game/)  
 
 ---
