@@ -10,9 +10,17 @@
     <h1 id="title">🎯 Number Guessing Game</h1>
     <p id="description">I have picked a number between 1 and 100. Can you guess it?</p>
 
+    <div class="settings">
+      <label for="difficulty">⚙️ Difficulty:</label>
+      <select id="difficulty" onchange="setDifficulty()">
+        <option value="easy">Easy (15 tries)</option>
+        <option value="medium" selected>Medium (10 tries)</option>
+        <option value="hard">Hard (5 tries)</option>
+      </select>
+    </div>
+
     <input type="number" id="guess" placeholder="Enter a number">
-    <button onclick="checkGuess()"
-            id="guess-btn">Guess</button>
+    <button onclick="checkGuess()" id="guess-btn">Guess</button>
 
     <p id="message"></p>
     <p id="attempts"></p>
