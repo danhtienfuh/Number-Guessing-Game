@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 8px 0;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #play-again {
+      display: none;
+      margin-top: 15px;
+      background: #2196F3;
+    }
+    #play-again:hover {
+      background: #1976D2;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Number Guessing Game</h1>
+  <p>I have picked a number between 1 and 100. Can you guess it?</p>
+
+  <input type="number" id="guess" placeholder="Enter a number">
+  <button onclick="checkGuess()">Guess</button>
+  <p id="message"></p>
+  <button id="play-again" onclick="resetGame()">Play Again</button>
+
+  <script>
+    let secret = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const input = document.getElementById("guess");
+      const message = document.getElementById("message");
+      const guess = Number(input.value);
+      attempts++;
+
+      if (!guess || guess < 1 || guess > 100) {
+        message.textContent = "⚠️ Please enter a number between 1 and 100.";
+      } else if (guess < secret) {
+        message.textContent = "↑ Try higher!";
+      } else if (guess > secret) {
+        message.textContent = "↓ Try lower!";
+      } else {
+        message.textContent = `✅ Correct! The number was ${secret}. You guessed it in ${attempts} attempts.`;
+        document.getElementById("play-again").style.display = "inline-block";
+      }
+      input.value = "";
+    }
+
+    function resetGame() {
+      secret = Math.floor(Math.random() * 100) + 1;
+      attempts = 0;
+      document.getElementById("message").textContent = "";
+      document.getElementById("play-again").style.display = "none";
+    }
+  </script>
+</body>
+</html>
 
