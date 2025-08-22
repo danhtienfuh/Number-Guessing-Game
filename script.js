@@ -1,6 +1,6 @@
 let secret = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
-let maxAttempts = 10;  // default medium
+let maxAttempts = 10;  
 let history = [];
 let lang = "en";
 
