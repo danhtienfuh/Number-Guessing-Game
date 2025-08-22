@@ -18,7 +18,7 @@ You have to guess the secret number between 1 and 100 within a limited number of
 ---
 
 ## 📷 Demo
-![img](<img width="1223" height="677" alt="ảnh" src="https://github.com/user-attachments/assets/d5408a61-d212-4a72-9b01-4c9e739c1998" />)
+![img](https://github.com/danhtienfuh/Number-Guessing-Game/blob/main/%E1%BA%A2nh%20ch%E1%BB%A5p%20m%C3%A0n%20h%C3%ACnh%202025-08-22%20171220.png)
 
 👉 [Play the game here](https://danhtienfuh.github.io/Number-Guessing-Game/)  
 
